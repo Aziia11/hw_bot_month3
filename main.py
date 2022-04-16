@@ -1,10 +1,13 @@
 from aiogram.utils import executor
-from config import bot, dp
-from handlers import client, callback, extra, callback_fasting, callback_travelling
+from config import dp
+from handlers import client, callback, extra, callback_fasting, callback_travelling,fsmadmin,fsmadmin_register
 
+
+fsmadmin.register_handler_admin(dp)
+fsmadmin_register.register_handler_user(dp)
 client.register_handlers_client(dp)
-callback_fasting.register_handler_callback()
-callback_travelling.register_handler_callback()
+callback_fasting.register_handler_callback(dp)
+callback_travelling.register_handler_callback(dp)
 callback.register_handlers_callback(dp)
 extra.register_handlers_other(dp)
 
