@@ -20,7 +20,8 @@ async def game(message: types.Message):
                         "Whenever U press U are great GAMER will appear next quiz\n"
                         "Note: Bot-Admin will delete cursed words,so that's why be careful😛")
 
-async def inform(message: types.Message):
+async def inform\
+                (message: types.Message):
     await message.reply("3. /info command will appear all information about bot\n"
                         "who created it and other aspects.")
 
