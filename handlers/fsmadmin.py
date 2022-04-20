@@ -4,7 +4,7 @@ from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from keyboards import admin_kb
 from config import bot
-
+from database import bot_db
 
 class FSMADMIN(StatesGroup):
     photo = State()
@@ -52,8 +52,9 @@ async def load_description(message: types.Message,
                            state:FSMContext):
     async with state.proxy() as data:
         data['description'] = message.text
-    async with state.proxy() as data:
-        await message.reply(str(data))
+    #async with state.proxy() as data:
+    #    await message.reply(str(data))
+    await bot_db.sql_insert(state)
     await state.finish()
 
 
